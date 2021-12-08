@@ -8,9 +8,7 @@ function setup() {
     createCanvas(windowWidth*0.987, windowHeight*0.973);
     liquid = new Liquid(0, height / 2, width, height / 2, 0.1);
     for (let i = 0; i < 100; i++) {
-        r = random(100,255);
-        g = random(100,255);
-        b = random(100,255);
+        
         movers.push(new Mover(random(0.1, 2), random(0, width), random(0, height / 2)));
     }
 }
@@ -20,7 +18,9 @@ function draw() {
     liquid.display();
     
     for (let i = 0; i < movers.length; i++) {
-
+      r = random(100,255);
+      g = random(100,255);
+      b = random(100,255);
     // Is the Mover in the liquid?
     if (liquid.contains(movers[i])) {
       // Calculate drag force
